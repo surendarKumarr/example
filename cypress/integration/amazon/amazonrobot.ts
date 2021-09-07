@@ -41,14 +41,14 @@ export class AmazonHands extends BaseHands{
 
 
     visitTodayDeal(){
-        cy.get(amazon.todayDeal.thirdDeal).trigger(amazon.todayDeal.scrollDownThePage)
-        this.clickOnDomElement(amazon.todayDeal.thirdDeal)
+        cy.get('[aria-posinset="3"] > .a-list-item > .a-spacing-small > .a-link-normal > .a-section > .product-image').trigger(amazon.todayDeal.scrollDownThePage)
+        this.clickOnDomElement('[aria-posinset="3"] > .a-list-item > .a-spacing-small > .a-link-normal > .a-section > .product-image')
     }
    
 
     getThirdProduct(){
         this.clickOnDomElement(amazon.clickThirdProduct.thirdProduct)
-        cy.get(amazon.clickThirdProduct.quantity).select('2').should('have.value', '2')
+        cy.get('.a-dropdown-container > #quantity').select('2').should('have.value', '2')
 
     }
     handlingTabs(){
@@ -59,7 +59,7 @@ export class AmazonHands extends BaseHands{
     searchMobile(){
         this.typeTextonId('twotabsearchtextbox','Mobiles')
         this.clickOnId('nav-search-submit-button')
-        cy.get('[data-asin="B08L5VCNT5"] > :nth-child(1) > .celwidget > [data-component-type="s-impression-logger"] > div.rush-component > .s-expand-height > .a-spacing-medium > :nth-child(2) > :nth-child(1) > .sg-col-inner > .a-spacing-none > .rush-component > .a-link-normal > .a-section > .s-image').trigger('mousedown')    
+        cy.get('[data-asin="B09C8JWKRN"] > :nth-child(1) > .celwidget > .s-expand-height > .a-spacing-medium > :nth-child(2) > :nth-child(1) > .sg-col-inner > .a-spacing-none > .rush-component > .a-link-normal > .a-section > .s-image').trigger('mousedown')    
         cy.visit('https://www.amazon.in/gp/slredirect/picassoRedirect.html/ref=pa_sp_mtf_aps_sr_pg1_1?ie=UTF8&adId=A03722163VHTZ69ZMMBTZ&url=%2FNew-Apple-iPhone-Mini-256GB%2Fdp%2FB08L5VCNT5%2Fref%3Dsr_1_12_sspa%3Fdchild%3D1%26keywords%3Dmobiles%26qid%3D1626954226%26sr%3D8-12-spons%26psc%3D1&qualifier=1626954226&id=2666584508996654&widgetName=sp_mtf')
 
     }
