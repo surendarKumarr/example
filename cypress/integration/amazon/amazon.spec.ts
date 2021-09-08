@@ -1,4 +1,4 @@
-import { AmazonEyes, AmazonHands, Dependency } from '../amazon/amazonrobot'
+import { AmazonEyes, AmazonHands, Dependency } from '../../amazonrobot'
 
 
 
