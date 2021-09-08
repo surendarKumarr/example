@@ -1,5 +1,5 @@
 import { BaseHands, BaseEyes, BaseDependencies } from './robots/BaseRobot'
-import amazon from '../../integration/amazon/pageobjects/amazon.json'
+
 
 
 
@@ -10,7 +10,7 @@ export class Dependency extends BaseDependencies{
 }
 
 export class AmazonEyes extends BaseEyes{
-    verifyExpectedQuantity(){
+     verifyExpectedQuantity(){
         this.seesDomVisibleWithCustomMatcher('#quantity',"2")
 
     }
@@ -35,6 +35,8 @@ export class AmazonEyes extends BaseEyes{
     }
 
 }
+
+
 
 
 export class AmazonHands extends BaseHands{
