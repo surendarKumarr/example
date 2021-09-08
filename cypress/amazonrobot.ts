@@ -42,14 +42,14 @@ export class AmazonEyes extends BaseEyes{
 export class AmazonHands extends BaseHands{
 
 
-    visitTodayDeal(){
-        cy.get('[aria-posinset="3"] > .a-list-item > .a-spacing-small > .a-link-normal > .a-section > .product-image').trigger(amazon.todayDeal.scrollDownThePage)
+     visitTodayDeal(){
+        cy.get('[aria-posinset="3"] > .a-list-item > .a-spacing-small > .a-link-normal > .a-section > .product-image').trigger('scrolldown')
         this.clickOnDomElement('[aria-posinset="3"] > .a-list-item > .a-spacing-small > .a-link-normal > .a-section > .product-image')
     }
    
 
     getThirdProduct(){
-        this.clickOnDomElement(amazon.clickThirdProduct.thirdProduct)
+        this.clickOnDomElement(':nth-child(4) > .a-list-item > .octopus-dlp-asin-section > .a-spacing-base > .a-link-normal > .a-section')
         cy.get('.a-dropdown-container > #quantity').select('2').should('have.value', '2')
 
     }
